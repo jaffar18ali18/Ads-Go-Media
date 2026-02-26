@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AdsGo Media - Premium Digital Marketing Agency</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real Estate Growth Domination System — AdsGo Media</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <meta name="robots" content="noindex">
 </head>
 <body>
+    <div id="pageLoader" class="page-loader" aria-hidden="true">
+        <div class="loader-inner">
+            <div class="spinner" aria-hidden="true"></div>
+            <div class="loader-text">Loading…</div>
+        </div>
+    </div>
+    <!-- First-visit logo splash -->
+    <div id="firstVisitSplash" class="first-visit-overlay" aria-hidden="true">
+        <div class="first-visit-inner">
+            <img src="images/logo.png" alt="AdsGo Media" class="first-visit-logo" id="firstVisitLogo">
+        </div>
+    </div>
     <!-- Header / Navbar -->
     <header class="navbar">
         <div class="navbar-container">
@@ -38,15 +51,19 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-background">
+            <video class="hero-video-bg" autoplay muted loop playsinline poster="images/hero.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;z-index:0;">
+                <source src="images/hero.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div class="gradient-overlay"></div>
         </div>
         <div class="hero-content">
             <div class="hero-text fade-in-up">
-                <h1 class="hero-title">Transform Your Brand Into Market Power</h1>
-                <p class="hero-subtitle">Performance Marketing & Data-Driven Branding Strategies That Deliver Real Results</p>
+                <h1 class="hero-title" style="color:rgb(255,255,255);text-shadow:0 2px 16px rgba(0,0,0,0.25);">Transform Your Brand Into Market Power</h1>
+                <p class="hero-subtitle" style="color:rgb(240,250,255);text-shadow:0 1px 8px rgba(0,0,0,0.18);">Performance Marketing & Data-Driven Branding Strategies That Deliver Real Results</p>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary">Get Started</button>
-                    <button class="btn btn-secondary">View Services</button>
+                    <button id="getStartedBtn" class="btn btn-primary">Get Started</button>
+                    <button id="viewServicesBtn" class="btn btn-secondary">View Services</button>
                 </div>
             </div>
         </div>
@@ -131,7 +148,7 @@
             <div class="testimonials-grid fade-in-up">
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop" alt="Client">
+                        <img src="images/dummy-client.jpg" alt="Client">
                     </div>
                     <div class="testimonial-body">
                         <h4>Ravi Sharma</h4>
@@ -143,7 +160,7 @@
 
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">
-                        <img src="https://images.unsplash.com/photo-1545996124-6a3b9b4b3d33?w=300&h=300&fit=crop" alt="Client">
+                        <img src="images/dummy-client.jpg" alt="Client">
                     </div>
                     <div class="testimonial-body">
                         <h4>Aditi Verma</h4>
@@ -155,7 +172,7 @@
 
                 <div class="testimonial-card">
                     <div class="testimonial-avatar">
-                        <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?w=300&h=300&fit=crop" alt="Client">
+                        <img src="images/dummy-client.jpg" alt="Client">
                     </div>
                     <div class="testimonial-body">
                         <h4>Karan Mehta</h4>
@@ -265,7 +282,7 @@
                         </ul>
                         <p class="level-note dramatic">We Don’t Sell Plots. We Build Real Estate Brands That Dominate Markets.</p>
                         <div class="level-cta">
-                            <button class="btn btn-primary">Book a Strategy Call</button>
+                            <a href="tel:9345166142" class="btn btn-primary">Book a Strategy Call</a>
                         </div>
                     </div>
                 </article>
@@ -278,7 +295,7 @@
         <div class="cta-content">
             <h2 class="cta-title fade-in">Ready to Scale Your Business?</h2>
             <p class="cta-subtitle fade-in">Let's create a strategy that transforms your brand into an industry leader</p>
-            <button class="btn btn-primary btn-large fade-in" id="contactBtn">Get In Touch Today</button>
+            <a href="https://wa.me/919786390200?text=Hi%20Text%20Varanum%20I%20Am%20Redirected%20from%20your%20adsgo%20website" target="_blank" class="btn btn-primary btn-large fade-in">Get In Touch Today</a>
         </div>
     </section>
 
@@ -297,9 +314,9 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <p>Email: hello@adsgomedia.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
-                    <p>Location: Global Digital Agency</p>
+                        <p>Email: jaffarali@adsgomedia.in</p>
+                        <p>Phone: +91 9345166142</p>
+                        <p>Address: 5/3 Nethaji Complex Gandhi Road West Tambaram-600045</p>
                 </div>
                 <div class="footer-section">
                     <h4>Social Media</h4>

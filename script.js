@@ -70,19 +70,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-/* ========================================
-   CONTACT BUTTON ACTION
-   ======================================== */
+// HERO BUTTON REDIRECTS
+// PAGE LOADER ELEMENT & HELPERS
+const pageLoader = document.getElementById('pageLoader');
+function showLoader() {
+    if (pageLoader) pageLoader.classList.add('visible');
+}
+function hideLoader() {
+    if (pageLoader) pageLoader.classList.remove('visible');
+}
 
-const contactBtn = document.getElementById('contactBtn');
-if (contactBtn) {
-    contactBtn.addEventListener('click', () => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) {
-            contactSection.scrollIntoView({ behavior: 'smooth' });
-        }
+// Show loader briefly then navigate so users see feedback
+const getStartedBtn = document.getElementById('getStartedBtn');
+if (getStartedBtn) {
+    getStartedBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showLoader();
+        setTimeout(() => { window.location.href = 'Contact.html'; }, 300);
     });
 }
+
+const viewServicesBtn = document.getElementById('viewServicesBtn');
+if (viewServicesBtn) {
+    viewServicesBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showLoader();
+        setTimeout(() => { window.location.href = 'Services.html'; }, 300);
+    });
+}
+
+// Ensure loader is hidden after the page finishes loading
+window.addEventListener('load', () => {
+    hideLoader();
+});
 
 /* ========================================
    NAVBAR BACKGROUND ON SCROLL
@@ -323,4 +343,84 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTheme(prefersDark ? 'dark' : 'light');
     }
     */
+})();
+
+
+/* ========================================
+   PREMIUM SERVICES SECTION ANIMATIONS
+   ======================================== */
+document.addEventListener('DOMContentLoaded', function() {
+    // Fade-in-up and stagger for premium cards
+    const premiumCards = document.querySelectorAll('.premium-service-card');
+    const sectionTitle = document.querySelector('.premium-section-title');
+    const observerOptions = { threshold: 0.15 };
+
+    if (premiumCards.length) {
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        premiumCards.forEach(card => cardObserver.observe(card));
+    }
+
+    // Section title fade and underline
+    if (sectionTitle) {
+        const titleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sectionTitle.classList.add('fade-in-up');
+                    setTimeout(() => sectionTitle.classList.add('animated-underline'), 200);
+                    titleObserver.unobserve(sectionTitle);
+                }
+            });
+        }, observerOptions);
+        titleObserver.observe(sectionTitle);
+    }
+});
+
+/* ========================================
+   FIRST-VISIT LOGO SPLASH
+   Shows an animated logo overlay only on the user's first visit
+   Uses localStorage key `firstVisitShown_v1` to persist state
+   ======================================== */
+(function() {
+    const splash = document.getElementById('firstVisitSplash');
+    const logo = document.getElementById('firstVisitLogo');
+    const splashKey = 'firstVisitShown_v1';
+    if (!splash) return;
+
+    function removeSplash() {
+        try {
+            splash.remove();
+        } catch (e) {
+            if (splash.parentNode) splash.parentNode.removeChild(splash);
+        }
+    }
+
+    function playSplash() {
+        splash.classList.add('visible');
+        // restart animation if cached
+        if (logo) {
+            logo.style.animation = 'none';
+            requestAnimationFrame(() => { logo.style.animation = ''; });
+        }
+
+        // hide after the pop animation then remove
+        setTimeout(() => { splash.classList.add('hide'); }, 1400);
+        setTimeout(() => { removeSplash(); localStorage.setItem(splashKey, 'true'); }, 1900);
+    }
+
+    if (!localStorage.getItem(splashKey)) {
+        // Prefer to start after load so images/fonts are ready
+        window.addEventListener('load', playSplash);
+        // Fallback in case load event is delayed
+        setTimeout(() => { if (!localStorage.getItem(splashKey)) playSplash(); }, 1000);
+    } else {
+        // Already shown — remove overlay immediately
+        removeSplash();
+    }
 })();
