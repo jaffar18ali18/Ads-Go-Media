@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Center director images for better presentation */
+        .directors-grid { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; }
+        .director-card { max-width:340px; }
+        .director-figure { display:flex; justify-content:center; align-items:center; }
+        .director-figure img { display:block; margin:0 auto; max-width:220px; height:auto; border-radius:8px; }
+        @media (max-width:700px) { .director-figure img { max-width:160px; } }
+    </style>
 </head>
 <body>
     <!-- Header / Navbar -->
@@ -118,12 +126,25 @@
                     <figure class="director-figure">
                         <img src="images/md2.jpg" alt="Samsuthinen">
                         <figcaption class="director-overlay">
-                            <div class="director-overlay-name">Samsuthinen</div>
-                            <div class="director-overlay-title">Managing Director</div>
+                            <div class="director-overlay-name">Samsuthein</div>
+                            <div class="director-overlay-title">Founder & CEO</div>
                         </figcaption>
                     </figure>
                     <div class="director-info">
                         <p class="director-description">A business strategy and growth planning expert who turns ideas into structured business models. He provides clear direction for sustainable scaling and long-term brand development..</p>
+                    </div>
+                </div>
+
+                <div class="director-card fade-in-up">
+                    <figure class="director-figure">
+                        <img src="images/d1.jpg" alt="Davooth Abdullah">
+                        <figcaption class="director-overlay">
+                            <div class="director-overlay-name">Davooth Abdullah</div>
+                            <div class="director-overlay-title">Director</div>
+                        </figcaption>
+                    </figure>
+                    <div class="director-info">
+                        <p class="director-description">Davooth Abdullah turns ideas into practical implementations across company operations and field management. He focuses on executing initiatives that improve processes, enhance on-field coordination, and deliver measurable business results.</p>
                     </div>
                 </div>
             </div>
