@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Accessories — A1 Mobile Sales & Service</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header fullwidth">
+    <div class="nav-row container">
+      <div class="brand-row">
+        <img src="images/logo.png" alt="A1 Mobile Logo" class="logo-img">
+        <div class="brand-text">
+          <a href="index.html" class="logo">A1 Mobile Sales & Service</a>
+          <div class="owner">Abudawoodu</div>
+        </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="mobiles.html">Mobiles</a>
+        <a href="watches.html">Watches</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="service.html">Service</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Accessories</h1>
+    <p class="sub">Browse Accessories — order or enquire via WhatsApp.</p>
+
+    <div class="listing">
+      <!-- Mobile Filter Toggle -->
+      <button id="toggleFilters">
+        <span style="font-size:1.1em">⚙️</span> <span>Filter Products</span>
+      </button>
+
+      <aside class="filters">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+            <h4 style="margin:0">Filters</h4>
+            <button id="closeFilters" style="background:none;border:none;display:none;">&times;</button>
+        </div>
+        <div class="filter-group"><label>Category<select id="accCategory"><option value="all">All</option><option>Chargers</option><option>Fast Chargers</option><option>Power Banks</option><option>Earphones</option><option>Bluetooth Headsets</option><option>Back Covers</option><option>Tempered Glass</option><option>Data Cables</option><option>Memory Cards</option></select></label></div>
+        <div class="filter-group"><label>Brand<select id="accBrand"><option value="">All</option><option>Boat</option><option>Samsung</option><option>Mi</option><option>Realme</option><option>Apple</option><option>OnePlus</option></select></label></div>
+        <div class="filter-group" style="display:flex;gap:8px">
+            <button id="applyAccFilters" class="btn small" style="flex:1">Apply</button>
+            <button id="resetAccFilters" class="btn small outline" style="flex:1;border:1px solid #ddd;color:#333">Reset</button>
+        </div>
+      </aside>
+
+      <section class="products-wrap">
+        <div class="sortbar" id="productCount">
+          <div><strong>Accessories</strong> Collection</div>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card" data-category="Earphones" data-brand="Boat" data-model="BassHeads 100" data-price="399" data-specs="Wired, Extra Bass">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/513ugd16C6L._SL1500_.jpg" alt="Boat BassHeads"></div>
+            <div class="product-meta">
+              <div><div class="brand">Boat</div><div class="model">BassHeads 100</div></div>
+              <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Wired</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Mic</span>
+              </div>
+            </div>
+            <div class="specs">10mm Drivers, Hawk Inspired Design</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Black</option>
+                    <option>White</option>
+                    <option>Red</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+          <article class="product-card" data-category="Power Banks" data-brand="Mi" data-model="Power Bank 3i" data-price="1299" data-specs="10000mAh, Dual Output">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/71lVwl3q-kL._SL1500_.jpg" alt="Mi Power Bank"></div>
+            <div class="product-meta">
+              <div><div class="brand">Mi</div><div class="model">Power Bank 3i</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">10000mAh</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">18W Fast</span>
+              </div>
+            </div>
+            <div class="specs">Dual USB Output, Two-way Fast Charging</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Black</option>
+                    <option>Blue</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+          
+          <article class="product-card" data-category="Chargers" data-brand="Samsung" data-model="25W Adapter" data-price="1299" data-specs="25W, USB-C">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/41PJMVYm1ZL._SL1500_.jpg" alt="Samsung Adapter"></div>
+             <div class="product-meta">
+              <div><div class="brand">Samsung</div><div class="model">25W Travel Adapter</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">25W</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">USB-C</span>
+              </div>
+            </div>
+            <div class="specs">Super Fast Charging without Cable</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>White</option>
+                    <option>Black</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+           <article class="product-card" data-category="Bluetooth Headsets" data-brand="OnePlus" data-model="Nord Buds 2" data-price="2999" data-specs="ANC, Fast Pair">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/51qx2aajpdL._SL1500_.jpg" alt="Nord Buds 2"></div>
+             <div class="product-meta">
+              <div><div class="brand">OnePlus</div><div class="model">Nord Buds 2</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">ANC</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">36h Battery</span>
+              </div>
+            </div>
+            <div class="specs">Active Noise Cancellation, BassWave</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Lightning White</option>
+                    <option>Thunder Gray</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+           <article class="product-card" data-category="Chargers" data-brand="Apple" data-model="20W USB-C Adapter" data-price="1699" data-specs="20W, USB-C">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/31ZkoKHQi9L.jpg" alt="Apple Adapter"></div>
+             <div class="product-meta">
+              <div><div class="brand">Apple</div><div class="model">20W USB-C Power Adapter</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">20W</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">USB-C</span>
+              </div>
+            </div>
+            <div class="specs">Fast Charging for iPhone/iPad</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>White</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+          <article class="product-card" data-category="Bluetooth Headsets" data-brand="Realme" data-model="Buds Wireless 3" data-price="1699" data-specs="ANC, Spatial Audio">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/31hevgM8dHL.jpg" alt="Realme Buds Wireless 3"></div>
+             <div class="product-meta">
+              <div><div class="brand">Realme</div><div class="model">Buds Wireless 3</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">ANC</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Multipoint</span>
+              </div>
+            </div>
+            <div class="specs">30dB ANC, 360 Spatial Audio</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Vitality White</option>
+                    <option>Bass Yellow</option>
+                    <option>Pure Black</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+          <article class="product-card" data-category="Bluetooth Headsets" data-brand="Boat" data-model="Rockerz 255 Pro+" data-price="1299" data-specs="40H Playback, ASAP Charge">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/61+SW9nDTEL._SL1500_.jpg" alt="Boat Rockerz"></div>
+             <div class="product-meta">
+              <div><div class="brand">Boat</div><div class="model">Rockerz 255 Pro+</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">40H Battery</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">IPX7</span>
+              </div>
+            </div>
+            <div class="specs">ASAP Charge, Dual Pairing</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Active Black</option>
+                    <option>Navy Blue</option>
+                    <option>Teal Green</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+          <article class="product-card" data-category="Memory Cards" data-brand="SanDisk" data-model="Ultra 128GB" data-price="899" data-specs="Class 10, A1">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/617NtexaW2L._SL1500_.jpg" alt="SanDisk Ultra"></div>
+             <div class="product-meta">
+              <div><div class="brand">SanDisk</div><div class="model">Ultra microSD 128GB</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">128GB</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">140MB/s</span>
+              </div>
+            </div>
+            <div class="specs">Class 10, A1 App Performance</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Standard</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+           <article class="product-card" data-category="Back Covers" data-brand="Spigen" data-model="Ultra Hybrid" data-price="999" data-specs="Anti-Yellowing, Drop Protection">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/61bK6PMOC3L._SL1500_.jpg" alt="Spigen Case"></div>
+             <div class="product-meta">
+              <div><div class="brand">Spigen</div><div class="model">Ultra Hybrid Case</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Hybrid</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Clear</span>
+              </div>
+            </div>
+            <div class="specs">Available for all major flagships</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Crystal Clear</option>
+                    <option>Matte Black</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+           <!-- NEW PRODUCTS ADDED -->
+           
+           <article class="product-card" data-category="Bluetooth Headsets" data-brand="Boat" data-model="Airdopes 161" data-price="999" data-specs="40H Playback, ASAP Charge">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/71pPxhTod4L._SL1500_.jpg" alt="Boat Airdopes 161"></div>
+             <div class="product-meta">
+              <div><div class="brand">Boat</div><div class="model">Airdopes 161</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">40H Battery</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">IPX5</span>
+              </div>
+            </div>
+            <div class="specs">10mm Drivers, Type-C Charging</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Pebble Black</option>
+                    <option>Cool Grey</option>
+                    <option>Pearl White</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+          <article class="product-card" data-category="Earphones" data-brand="JBL" data-model="C100SI" data-price="649" data-specs="Deep Bass, Generic">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/51Q8DUDT2eL._SL1500_.jpg" alt="JBL C100SI"></div>
+             <div class="product-meta">
+              <div><div class="brand">JBL</div><div class="model">C100SI Wired</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Deep Bass</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Mic</span>
+              </div>
+            </div>
+            <div class="specs">JBL Pure Bass Sound, Lightweight</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Black</option>
+                    <option>White</option>
+                    <option>Red</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+          <article class="product-card" data-category="Bluetooth Headsets" data-brand="OnePlus" data-model="Bullets Z2" data-price="1999" data-specs="30H Battery, Fast Charge">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/514NPRZ1AQL._SL1500_.jpg" alt="OnePlus Bullets Z2"></div>
+             <div class="product-meta">
+              <div><div class="brand">OnePlus</div><div class="model">Bullets Wireless Z2</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">30H Battery</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Fast Charge</span>
+              </div>
+            </div>
+            <div class="specs">12.4mm Drivers, AI Noise Cancellation</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Magico Black</option>
+                    <option>Beam Blue</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+          
+          <article class="product-card" data-category="Power Banks" data-brand="Ambrane" data-model="Stylo 20k" data-price="1599" data-specs="20000mAh, 20W PD">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/8169fyLD3vL._SL1500_.jpg" alt="Ambrane Power Bank"></div>
+             <div class="product-meta">
+              <div><div class="brand">Ambrane</div><div class="model">Stylo 20K</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">20000mAh</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">20W Fast</span>
+              </div>
+            </div>
+            <div class="specs">Made in India, Multi-Layer Protection</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Black</option>
+                    <option>Green</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+          
+          <article class="product-card" data-category="Fast Chargers" data-brand="Mi" data-model="33W SonicCharge" data-price="999" data-specs="33W, Turbo Charge">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/41aEJ22ljBL._SL1100_.jpg" alt="Mi 33W Charger"></div>
+             <div class="product-meta">
+              <div><div class="brand">Mi</div><div class="model">33W SonicCharge</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">33W</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Turbo</span>
+              </div>
+            </div>
+            <div class="specs">Includes 100cm Type-C Cable</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>White</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+          <article class="product-card" data-category="Data Cables" data-brand="Boat" data-model="Micro USB 550" data-price="199" data-specs="Rugged, 1.5m">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/61npnRlzG-L._SX679_.jpg" alt="Boat Cable"></div>
+             <div class="product-meta">
+              <div><div class="brand">Boat</div><div class="model">Rugged Micro USB</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">1.5m</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Braided</span>
+              </div>
+            </div>
+            <div class="specs">Tangle Free, 2.4A Fast Charging</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Black</option>
+                    <option>Red</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+          
+          
+          <article class="product-card" data-category="Tempered Glass" data-brand="Spigen" data-model="AlignMaster" data-price="999" data-specs="Easy Install, 9H">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/71+f4ZGosdL._SL1500_.jpg" alt="Tempered Glass"></div>
+             <div class="product-meta">
+              <div><div class="brand">Spigen</div><div class="model">AlignMaster Glass</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">9H Hardness</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">2 Pack</span>
+              </div>
+            </div>
+            <div class="specs">For iPhone 15/14/13 Series</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Clear</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+          
+          <article class="product-card" data-category="Fast Chargers" data-brand="Realme" data-model="33W Dart" data-price="999" data-specs="33W, Dart Charge">
+            <div class="product-media"><img src="https://m.media-amazon.com/images/I/41BHCXfSElL._SL1024_.jpg" alt="Realme Charger"></div>
+             <div class="product-meta">
+              <div><div class="brand">Realme</div><div class="model">33W Dart Charger</div></div>
+               <div style="margin-top:6px; display:flex; gap:6px;">
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">33W</span>
+                  <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Dart</span>
+              </div>
+            </div>
+            <div class="specs">Universal Compatibility, Safe Charge</div>
+            <div style="margin:8px 0;">
+                <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+                    <option>Yellow</option>
+                    <option>White</option>
+                </select>
+            </div>
+            <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+          </article>
+
+          <article class="product-card" data-category="Specker" data-brand="Loading..." data-model="A1-S01" data-price="0" data-specs=", ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772539480/blob_j24azj.png" alt="A1-S01"></div>
+    <div class="product-meta">
+        <div><div class="brand">Loading...</div><div class="model">A1-S01</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>White</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+ <article class="product-card" data-category="Specker" data-brand="Bike Speaker" data-model="A1-S02" data-price="0" data-specs=", ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772539593/blob_hyk3wx.png" alt="A1-S02"></div>
+    <div class="product-meta">
+        <div><div class="brand">Bike Speaker</div><div class="model">A1-S02</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Blue</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+<article class="product-card" data-category="Chargers" data-brand="U&I" data-model="Entry 59 Stereo" data-price="0" data-specs=", ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772539716/blob_x7hvj8.png" alt="Entry 59 Stereo"></div>
+    <div class="product-meta">
+        <div><div class="brand">U&I</div><div class="model">Entry 59 Stereo</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Purple</option>
+                    <option>black</option>
+                    <option>white</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+<article class="product-card" data-category="Specker" data-brand="ANS" data-model="Mega Sound" data-price="0" data-specs=", ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772539918/blob_ju0ha5.png" alt="Mega Sound"></div>
+    <div class="product-meta">
+        <div><div class="brand">ANS</div><div class="model">Mega Sound</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>White</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+<article class="product-card" data-category="Power Banks" data-brand="Power Bank" data-model="15000 MAH" data-price="0" data-specs=", ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772539986/blob_agggsf.png" alt="15000 MAH"></div>
+    <div class="product-meta">
+        <div><div class="brand">Power Bank</div><div class="model">15000 MAH</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Black</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+
+
+<article class="product-card" data-category="Data Cables" data-brand="Zebion" data-model="EEM" data-price="0" data-specs=", ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772540141/blob_dajc6m.png" alt="EEM"></div>
+    <div class="product-meta">
+        <div><div class="brand">Zebion</div><div class="model">EEM</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Black</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+
+<article class="product-card" data-category="Fast Chargers" data-brand="Ticon" data-model="TC-38D" data-price="0" data-specs=", ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772540250/blob_swj39y.png" alt="TC-38D"></div>
+    <div class="product-meta">
+        <div><div class="brand">Ticon</div><div class="model">TC-38D</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>White</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+<article class="product-card" data-category="Chargers" data-brand="Fast Charger" data-model="Fist Expert" data-price="0" data-specs=", ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772540338/blob_keb0mv.png" alt="Fist Expert"></div>
+    <div class="product-meta">
+        <div><div class="brand">Fast Charger</div><div class="model">Fist Expert</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Black</option>
+                    <option>White</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+
+<article class="product-card" data-category="Chargers" data-brand="Kord" data-model="KT-40" data-price="0" data-specs="30W, ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772540426/blob_lmj54a.png" alt="KT-40"></div>
+    <div class="product-meta">
+        <div><div class="brand">Kord</div><div class="model">KT-40</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">30W</span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Black</option>
+                    <option>White</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+
+<article class="product-card" data-category="Chargers" data-brand="JBL" data-model="CAPTAIN" data-price="0" data-specs="Pure Bass, Zero Noise">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772540491/blob_jtjh4g.png" alt="CAPTAIN"></div>
+    <div class="product-meta">
+        <div><div class="brand">JBL</div><div class="model">CAPTAIN</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Pure Bass</span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">Zero Noise</span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Black</option>
+                    <option>White</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+
+<article class="product-card" data-category="Chargers" data-brand="Ticom" data-model="Glow Pod" data-price="0" data-specs="36Hrs, RGB">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772540578/blob_nzjlsg.png" alt="Glow Pod"></div>
+    <div class="product-meta">
+        <div><div class="brand">Ticom</div><div class="model">Glow Pod</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">36Hrs</span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">RGB</span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Black</option>
+                    <option>White</option>
+                    <option>Blue</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+<article class="product-card" data-category="Bluetooth Headsets" data-brand="Mobile Trypod" data-model="A1-Try01" data-price="0" data-specs=", ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772540673/blob_odnsrd.png" alt="A1-Try01"></div>
+    <div class="product-meta">
+        <div><div class="brand">Mobile Trypod</div><div class="model">A1-Try01</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Black</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+<article class="product-card" data-category="Power Banks" data-brand="Ticon" data-model="11 Pro" data-price="0" data-specs="11000 MAH, 3.4 A">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772540803/blob_godctd.png" alt="11 Pro"></div>
+    <div class="product-meta">
+        <div><div class="brand">Ticon</div><div class="model">11 Pro</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">11000 MAH</span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">3.4 A</span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Black</option>
+                    <option>White</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+
+<article class="product-card" data-category="Chargers" data-brand="Ticom" data-model="Trans Pro" data-price="0" data-specs="15w, 3.1A">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772540933/blob_oin1wm.png" alt="Trans Pro"></div>
+    <div class="product-meta">
+        <div><div class="brand">Ticom</div><div class="model">Trans Pro</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">15w</span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">3.1A</span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Black</option>
+                    <option>White</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+<article class="product-card" data-category="Chargers" data-brand="Micromax" data-model="BL-5c" data-price="0" data-specs=", ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772541096/blob_tsiamq.png" alt="BL-5c"></div>
+    <div class="product-meta">
+        <div><div class="brand">Micromax</div><div class="model">BL-5c</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+
+<article class="product-card" data-category="Chargers" data-brand="Nokia" data-model="BL-5c" data-price="0" data-specs="1020 MAH, 3.7v">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772541176/blob_pmg9rl.png" alt="BL-5c"></div>
+    <div class="product-meta">
+        <div><div class="brand">Nokia</div><div class="model">BL-5c</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">1020 MAH</span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">3.7v</span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+
+<article class="product-card" data-category="Chargers" data-brand="Ticom" data-model="Super Fast Cable" data-price="0" data-specs="3 in 1, 65W">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772541284/blob_qw0fl6.png" alt="Super Fast Cable"></div>
+    <div class="product-meta">
+        <div><div class="brand">Ticom</div><div class="model">Super Fast Cable</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">3 in 1</span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">65W</span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Black</option>
+                    <option>White</option>
+                    <option>Red</option>
+                    <option>Blue</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+<article class="product-card" data-category="Specker" data-brand="Pick Pack" data-model="PP-CS802" data-price="0" data-specs=", ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772541400/blob_st8dan.png" alt="PP-CS802"></div>
+    <div class="product-meta">
+        <div><div class="brand">Pick Pack</div><div class="model">PP-CS802</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Black</option>
+                    <option>Gray</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+
+
+<article class="product-card" data-category="Fast Chargers" data-brand="Unix" data-model="Ux-X45" data-price="0" data-specs=", ">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772541505/blob_dfc9fj.png" alt="Ux-X45"></div>
+    <div class="product-meta">
+        <div><div class="brand">Unix</div><div class="model">Ux-X45</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;"></span>
+        </div>
+    </div>
+    <div class="specs"></div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Red&White</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+
+<article class="product-card" data-category="Memory Cards" data-brand="KDM" data-model="Data Bank" data-price="0" data-specs="3.0, 128 GB">
+    <div class="product-media"><img src="https://res.cloudinary.com/dpraewxjn/image/upload/v1772541648/blob_tvxgrl.png" alt="Data Bank"></div>
+    <div class="product-meta">
+        <div><div class="brand">KDM</div><div class="model">Data Bank</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">3.0</span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">128 GB</span>
+        </div>
+    </div>
+    <div class="specs">USB & C Type</div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            <option>Silver</option>
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>
+
+
+
+
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">© A1 Mobile Sales & Service</footer>
+  <script src="js/script.js"></script>
+  <script>
+      // specific logic for accessories reset since main script handles defaults
+      document.getElementById('resetAccFilters')?.addEventListener('click', ()=>{
+        document.getElementById('accCategory').value = 'all';
+        document.getElementById('accBrand').value = '';
+        document.getElementById('applyAccFilters').click();
+      });
+  </script>
+</body>
+</html>

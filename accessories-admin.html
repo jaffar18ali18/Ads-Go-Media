@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A1 Accessories Admin - Code Generator</title>
+<style>
+  :root { --primary: #007bff; --dark: #343a40; --bg: #f8f9fa; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  header {
+    background: var(--dark);
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  header h1 { margin: 0; font-size: 1.5rem; }
+  
+  .content { padding: 30px; }
+  
+  .step {
+    margin-bottom: 40px;
+    border-left: 4px solid var(--primary);
+    padding-left: 20px;
+  }
+  .step h3 {
+    margin-top: 0;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .step-badge {
+    background: var(--dark);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+
+  /* Form Elements */
+  label { display: block; margin: 12px 0 6px; font-weight: 600; font-size: 0.9rem; }
+  input, select, textarea {
+    width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+    font-size: 1rem; box-sizing: border-box; transition: border 0.3s;
+  }
+  input:focus, select:focus, textarea:focus { border-color: var(--primary); outline: none; }
+  
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  
+  /* Buttons */
+  .btn {
+    padding: 12px 24px; border: none; border-radius: 6px;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary { background-color: var(--primary); color: white; }
+  .btn-primary:hover { background-color: #0056b3; }
+  .btn-secondary { background-color: #e9ecef; color: #333; }
+  .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  
+  /* Image Preview */
+  .preview-box {
+    margin-top: 15px;
+    width: 100%;
+    height: 300px;
+    background: #f8f9fa;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .preview-box img { max-width: 100%; max-height: 100%; object-fit: contain; display: none; }
+  
+  .status { margin-top: 10px; font-weight: 600; }
+  .status.processing { color: #f39c12; }
+  .status.success { color: #27ae60; }
+  .status.error { color: #c0392b; }
+
+  /* Output */
+  #outputCode {
+    font-family: monospace;
+    font-size: 0.85rem;
+    height: 300px;
+    background: #2d3436;
+    color: #dfe6e9;
+    border: none;
+    margin-top: 10px;
+  }
+  
+  /* Loading Spinner */
+  .spinner {
+    border: 4px solid rgba(0,0,0,0.1);
+    border-left-color: var(--primary);
+    border-radius: 50%;
+    width: 30px; height: 30px;
+    animation: spin 1s linear infinite;
+    display: none;
+  }
+  @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>🎧 Accessories Manager</h1>
+  </header>
+  
+  <div class="content">
+    
+    <!-- STEP 1: Image -->
+    <div class="step">
+      <h3><span class="step-badge">1</span> Image Processing Pipeline</h3>
+      <p style="color:#666; font-size:0.9rem; margin-bottom:15px;">Paste an image link below OR Select a File. The tool will automatically <b>Remove Background</b> then <b>Upload to Cloudinary</b>.</p>
+      
+      <input type="url" id="imageUrlInput" placeholder="Paste image URL here (e.g., https://example.com/product.jpg)...">
+      
+      <div style="text-align:center; margin:10px 0; color:#aaa; font-size:0.9rem;">- OR -</div>
+
+      <input type="file" id="fileInput" accept="image/*" style="display:none">
+      <button class="btn btn-secondary" onclick="document.getElementById('fileInput').click()" style="width:100%; justify-content:Center;">📂 Upload from PC</button>
+      
+      <div class="preview-box" id="previewContainer">
+        <div class="spinner" id="loadingSpinner"></div>
+        <p id="placeholderText" style="color:#aaa">Waiting for Image...</p>
+        <img id="previewImg">
+      </div>
+      
+      <div id="imageStatus" class="status"></div>
+      
+      <!-- Hidden field for final URL -->
+      <input type="text" id="finalImageUrl" placeholder="Cloudinary URL will appear here..." readonly style="margin-top:10px; background:#f9f9f9; color:#666; font-size:0.85rem;">
+    </div>
+
+    <!-- STEP 2: Details -->
+    <div class="step">
+      <h3><span class="step-badge">2</span> Product Details</h3>
+      
+      <div class="row">
+        <div>
+          <label>Category</label>
+          <select id="category">
+            <option value="Chargers">Chargers</option>
+            <option value="Fast Chargers">Fast Chargers</option>
+            <option value="Power Banks">Power Banks</option>
+            <option value="Earphones">Earphones</option>
+            <option value="Bluetooth Headsets">Bluetooth Headsets</option>
+            <option value="Back Covers">Back Covers</option>
+            <option value="Tempered Glass">Tempered Glass</option>
+            <option value="Data Cables">Data Cables</option>
+            <option value="Memory Cards">Memory Cards</option>
+            <option value="Watches">Watches</option>
+            <option value="Specker">Specker</option>
+          </select>
+        </div>
+        <div>
+          <label>Brand</label>
+          <input type="text" id="brand" placeholder="e.g. Boat, Samsung, Mi">
+        </div>
+      </div>
+
+      <label>Model Name</label>
+      <input type="text" id="model" placeholder="e.g. BassHeads 100">
+
+      <div class="row">
+        <div>
+          <label>Price (₹)</label>
+          <input type="number" id="price" placeholder="499">
+        </div>
+        <div>
+            <!-- Spacer or availability if needed -->
+        </div>
+      </div>
+
+      <div class="row">
+          <div>
+            <label>Tag 1 (Small info)</label>
+            <input type="text" id="tag1" placeholder="e.g. 1.5m">
+          </div>
+          <div>
+            <label>Tag 2 (Small info)</label>
+            <input type="text" id="tag2" placeholder="e.g. Braided">
+          </div>
+      </div>
+
+      <label>Specs (Short Description)</label>
+      <input type="text" id="specs" placeholder="e.g. Tangle Free, 2.4A Fast Charging">
+
+      <label>Color Options (Comma separated)</label>
+      <input type="text" id="colors" value="Black, White" placeholder="Black, White, Red">
+    </div>
+
+    <!-- STEP 3: Generate -->
+    <div class="step" style="border:none">
+      <h3><span class="step-badge">3</span> Generate Code</h3>
+      <button class="btn btn-primary" onclick="generateCode()" style="width:100%; justify-content: center;">📝 Generate Accessory HTML</button>
+      
+      <div style="margin-top: 20px;">
+        <textarea id="outputCode" readonly onclick="this.select()"></textarea>
+        <button class="btn btn-secondary" onclick="copyToClipboard()" style="margin-top:10px; width:100%; justify-content: center;">📋 Copy to Clipboard</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  // CONFIG
+  const CLOUD_NAME = 'dpraewxjn';
+  const UPLOAD_PRESET = 'ml_default';
+  const REMOVE_BG_KEY = 'gdt2fh8ioDwvt21YREXJEeCx';
+
+  // DOM Elements
+  const urlInput = document.getElementById('imageUrlInput');
+  const fileInput = document.getElementById('fileInput');
+  const previewImg = document.getElementById('previewImg');
+  const placeholder = document.getElementById('placeholderText');
+  const spinner = document.getElementById('loadingSpinner');
+  const statusDiv = document.getElementById('imageStatus');
+  const finalUrlInput = document.getElementById('finalImageUrl');
+
+  let processedBlob = null;
+
+  // 1. AUTO-PROCESS ON PASTE/INPUT
+  urlInput.addEventListener('input', debounce((e) => {
+      const url = e.target.value.trim();
+      if(isValidUrl(url)) {
+          processPipeline(url, 'url');
+      }
+  }, 800));
+
+   urlInput.addEventListener('paste', (e) => {
+      setTimeout(() => {
+          const url = e.target.value.trim();
+          if(isValidUrl(url)) {
+              processPipeline(url, 'url');
+          }
+      }, 50);
+  });
+
+  // 1b. FILE INPUT
+  if(fileInput){
+      fileInput.addEventListener('change', (e) => {
+        if(e.target.files && e.target.files[0]) {
+            const file = e.target.files[0];
+            // Show preview immediately
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+                previewImg.src = ev.target.result;
+                previewImg.style.display = 'block';
+                placeholder.style.display = 'none';
+            };
+            reader.readAsDataURL(file);
+            
+            // Process
+            processPipeline(file, 'file');
+        }
+      });
+  }
+
+  async function processPipeline(source, type) {
+      if(!source) return;
+
+      // STEP 1: Remove Background
+      setStatus('⏳ Removing Background...', 'processing');
+      setLoading(true);
+      
+      const formData = new FormData();
+      
+      if(type === 'url') {
+        formData.append('image_url', source);
+      } else {
+        formData.append('image_file', source);
+      }
+
+      formData.append('size', 'auto');
+      // formData.append('bg_color', 'white'); // Optional: White background if needed, remove for transparent
+
+      try {
+          
+          const rbRes = await fetch('https://api.remove.bg/v1.0/removebg', {
+              method: 'POST',
+              headers: { 'X-Api-Key': REMOVE_BG_KEY },
+              body: formData
+          });
+
+          if(!rbRes.ok) throw new Error('Remove.bg Error: ' + rbRes.statusText);
+
+          processedBlob = await rbRes.blob();
+          const cleanUrl = URL.createObjectURL(processedBlob);
+          previewImg.src = cleanUrl;
+          previewImg.style.display = 'block';
+          
+          // STEP 2: Upload to Cloudinary
+          setStatus('☁️ Uploading processed image to Cloudinary...', 'processing');
+          
+          await uploadToCloudinary(processedBlob);
+
+      } catch (error) {
+          console.error(error);
+          setStatus('❌ Error: ' + error.message, 'error');
+          setLoading(false);
+      }
+  }
+
+  async function uploadToCloudinary(blob) {
+      const formData = new FormData();
+      formData.append('file', blob);
+      formData.append('upload_preset', UPLOAD_PRESET);
+
+      try {
+          const cloudRes = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`, {
+              method: 'POST',
+              body: formData
+          });
+
+          const data = await cloudRes.json();
+          
+          if (data.secure_url) {
+              finalUrlInput.value = data.secure_url;
+              setStatus('✅ Success! Image ready.', 'success');
+          } else {
+              throw new Error('Upload failed: ' + (data.error ? data.error.message : 'Unknown error'));
+          }
+
+      } catch (error) {
+          console.error(error);
+          setStatus('❌ Upload Error: ' + error.message, 'error');
+      } finally {
+          setLoading(false);
+      }
+  }
+
+  // 2. GENERATE HTML
+  function generateCode() {
+    const category = getValue('category');
+    const brand = getValue('brand');
+    const model = getValue('model') || 'Unknown Model';
+    const price = getValue('price') || '0';
+    const tag1 = getValue('tag1');
+    const tag2 = getValue('tag2');
+    const specs = getValue('specs');
+    const imageUrl = getValue('finalImageUrl') || 'img/placeholder.png';
+    const colors = parseList(getValue('colors'));
+
+    const renderOpts = (arr) => arr.map((item, i) => 
+       `<option>${item}</option>`
+    ).join('\n                    ');
+
+    const html = `<article class="product-card" data-category="${category}" data-brand="${brand}" data-model="${model}" data-price="${price}" data-specs="${tag1}, ${tag2}">
+    <div class="product-media"><img src="${imageUrl}" alt="${model}"></div>
+    <div class="product-meta">
+        <div><div class="brand">${brand}</div><div class="model">${model}</div></div>
+        <div style="margin-top:6px; display:flex; gap:6px;">
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">${tag1}</span>
+            <span style="background:#f0f0f0; padding:4px 8px; border-radius:4px; font-size:0.8rem;">${tag2}</span>
+        </div>
+    </div>
+    <div class="specs">${specs}</div>
+    <div style="margin:8px 0;">
+        <select class="color-select" style="width:100%;padding:6px;border:1px solid #ddd;border-radius:4px;">
+            ${renderOpts(colors)}
+        </select>
+    </div>
+    <div class="card-actions"><button class="enquire-btn" style="width:100%">Check Availability</button></div>
+</article>`;
+
+    document.getElementById('outputCode').value = html;
+  }
+
+  // Utilities
+  function getValue(id) { return document.getElementById(id).value.trim(); }
+  function parseList(str) { return str.split(',').map(s=>s.trim()).filter(s=>s); }
+  
+  function isValidUrl(string) {
+      try { new URL(string); return string.startsWith('http'); } catch (_) { return false; }
+  }
+  
+  function debounce(func, wait) {
+      let timeout;
+      return function(...args) {
+          clearTimeout(timeout);
+          timeout = setTimeout(() => func.apply(this, args), wait);
+      };
+  }
+
+  function setStatus(msg, type) {
+      statusDiv.textContent = msg;
+      statusDiv.className = 'status ' + type;
+  }
+
+  function setLoading(loading) {
+      spinner.style.display = loading ? 'block' : 'none';
+      if(loading) placeholder.style.display = 'none';
+  }
+  
+  function copyToClipboard() {
+    const el = document.getElementById('outputCode');
+    el.select();
+    el.setSelectionRange(0, 99999);
+    navigator.clipboard.writeText(el.value);
+    alert('Code copied!');
+  }
+</script>
+
+</body>
+</html>

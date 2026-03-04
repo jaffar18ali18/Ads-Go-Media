@@ -1,347 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Real Estate Growth Domination System — AdsGo Media</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <meta name="robots" content="noindex">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>A1 Mobile Sales & Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    // Hamburger menu toggle for mobile/tablet
+    document.addEventListener('DOMContentLoaded', function() {
+      var navToggle = document.getElementById('navToggle');
+      var mainNav = document.getElementById('mainNav');
+      navToggle.addEventListener('click', function() {
+        var expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        mainNav.classList.toggle('open');
+      });
+      // Close menu on link click (mobile UX)
+      mainNav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if(window.innerWidth < 1024) {
+            mainNav.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    });
+  </script>
 </head>
 <body>
-    <div id="pageLoader" class="page-loader" aria-hidden="true">
-        <div class="loader-inner">
-            <div class="spinner" aria-hidden="true"></div>
-            <div class="loader-text">Loading…</div>
+  <header class="site-header fullwidth">
+    <div class="nav-row container">
+      <div class="brand-row">
+        <img src="images/logo.png" alt="A1 Mobile Logo" class="logo-img">
+        <div class="brand-text">
+          <a href="index.html" class="logo">A1 Mobile Sales & Service</a>
+          <div class="owner">Abudawoodu</div>
         </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="mobiles.html">Mobiles</a>
+        <a href="watches.html">Watches</a>
+        <a href="accessories.html">Accessories</a>
+        <a href="service.html">Service</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
-    <!-- First-visit logo splash -->
-    <div id="firstVisitSplash" class="first-visit-overlay" aria-hidden="true">
-        <div class="first-visit-inner">
-            <img src="images/logo.png" alt="AdsGo Media" class="first-visit-logo" id="firstVisitLogo">
-        </div>
-    </div>
-    <!-- Header / Navbar -->
-    <header class="navbar">
-        <div class="navbar-container">
-            <div class="logo">
-                <img src="images/logo.png" alt="AdsGo Media">
-            </div>
-            
-            <nav class="nav-menu" id="navMenu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="About.html" class="nav-link">About</a>
-                <a href="Services.html" class="nav-link">Services</a>
-                <a href="RealEstate.html" class="nav-link">Real Estate</a>
-                <a href="Contact.html" class="nav-link">Contact</a>
-            </nav>
+  </header>
 
-            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme"><span class="theme-icon">🌙</span></button>
-
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+  <main>
+    <section class="hero premium fullwidth">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <h1>Trusted Mobile & Watch Sales and Service in Lebbaikudikkadu</h1>
+          <ul class="hero-features">
+            <li>100% Genuine Products</li>
+            <li>Experienced Service</li>
+            <li>Free Home Delivery</li>
+            <li>Cash On Delivery Available</li>
+          </ul>
+          <div class="hero-ctas">
+            <a href="mobiles.html" class="btn large">Shop Mobiles</a>
+            <a href="service.html" class="btn outline large">Book Service</a>
+            <a href="#" id="heroWhatsapp" class="btn whatsapp large">WhatsApp Now</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="owner-card">
+            <img src="images/owner2.jpg" alt="Abudawoodu" class="owner-img">
+            <div class="owner-info">
+              <div class="owner-name">Abudawoodu</div>
+              <div class="owner-title">Founder & Owner — Mobile & Watch Service Specialist</div>
+              <ul class="trust-badges">
+                <li>✔ Local Trusted Business</li>
+                <li>✔ Serving Customers with Honesty</li>
+                <li>✔ Quality Assured</li>
+              </ul>
             </div>
+          </div>
         </div>
-    </header>
-    
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background">
-            <video class="hero-video-bg" autoplay muted loop playsinline poster="images/hero.jpg">
-                <source src="images/hero.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="gradient-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text fade-in-up">
-                <h1 class="hero-title">Transform Your Brand Into Market Power</h1>
-                <p class="hero-subtitle">Performance Marketing & Data-Driven Branding Strategies That Deliver Real Results</p>
-                <div class="hero-buttons">
-                    <button id="getStartedBtn" class="btn btn-primary">Get Started</button>
-                    <button id="viewServicesBtn" class="btn btn-secondary">View Services</button>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- Services Preview Section removed per request -->
-    <!-- RESULTS / PERFORMANCE SECTION -->
-    <section class="results-section" id="results">
-        <div class="container">
-            <h2 class="section-title text-center fade-in">We Don’t Promise. We Deliver Results.</h2>
-            <p class="section-description text-center fade-in muted">Performance that moves the needle — measurable, repeatable and aligned with business growth.</p>
-
-            <div class="results-grid fade-in-up">
-                <div class="stat-card">
-                    <div class="stat-number"><span class="glow"><span class="counter" data-target="120">0</span>+</span></div>
-                    <div class="stat-label">Projects Completed</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number"><span class="glow"><span class="counter" data-target="110">0</span>+</span></div>
-                    <div class="stat-label">Active Clients</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number"><span class="glow"><span class="counter" data-target="5">0</span>+</span></div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number"><span class="glow"><span class="counter" data-target="3">0</span>X</span></div>
-                    <div class="stat-label">Average ROI Growth</div>
-                </div>
-            </div>
+    <section class="meet-owner container">
+      <h2 class="section-title">Meet the Owner</h2>
+      <div class="owner-grid">
+        <div class="owner-photo"><img src="images/owner.jpg" alt="Abudawoodu"></div>
+        <div class="owner-text">
+          <p><strong>Abudawoodu</strong> — Experienced Professional in mobile and watch sales & service. Committed to honest pricing, genuine products and reliable after-sales support. Our focus is on building long-term relationships with local customers through quality work and transparency.</p>
+          <div class="quote">“Our priority is customer trust and long-term relationship.”</div>
         </div>
+      </div>
     </section>
 
-    <!-- GROWTH PROCESS SECTION -->
-    <section class="process-section" id="process">
-        <div class="container">
-            <h2 class="section-title text-center fade-in">Our Growth Process</h2>
-            <p class="section-description text-center fade-in muted">A structured, data-driven approach that turns insight into impact.</p>
-
-            <div class="process-grid fade-in-up">
-                <div class="process-step">
-                    <div class="process-icon">🔎</div>
-                    <div class="process-content">
-                        <h4>Research & Market Analysis</h4>
-                        <p>Deep audience insight, competitive audits and market signals to shape strategy.</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="process-icon">🎯</div>
-                    <div class="process-content">
-                        <h4>Creative Strategy & Planning</h4>
-                        <p>Brand-led creative roadmaps and media planning built for conversions.</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="process-icon">⚙️</div>
-                    <div class="process-content">
-                        <h4>Execution & Optimization</h4>
-                        <p>Precision execution across channels with continuous A/B testing and optimization.</p>
-                    </div>
-                </div>
-
-                <div class="process-step">
-                    <div class="process-icon">📈</div>
-                    <div class="process-content">
-                        <h4>Scale & Performance Tracking</h4>
-                        <p>Data pipelines, KPI tracking and growth loops to scale ROI predictably.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="what-offer container">
+      <h2 class="section-title">What We Offer</h2>
+      <div class="offer-cards">
+        <div class="offer-card"><div class="icon">📱</div><h4>Mobile Sales</h4><p>Genuine mobiles from top brands.</p><a href="mobiles.html" class="btn small">Explore</a></div>
+        <div class="offer-card"><div class="icon">⌚</div><h4>Smart Watch Sales</h4><p>Fitness & smart watches.</p><a href="watches.html" class="btn small">Explore</a></div>
+        <div class="offer-card"><div class="icon">🕒</div><h4>Normal Watch Sales</h4><p>Classic watches & straps.</p><a href="watches.html" class="btn small">Explore</a></div>
+        <div class="offer-card"><div class="icon">🎧</div><h4>Accessories</h4><p>Chargers, earphones & more.</p><a href="accessories.html" class="btn small">Explore</a></div>
+        <div class="offer-card"><div class="icon">🔧</div><h4>Mobile & Watch Service</h4><p>Trusted repair & pickup.</p><a href="service.html" class="btn small">Explore</a></div>
+      </div>
     </section>
 
-    <!-- TESTIMONIALS SECTION -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="container">
-            <h2 class="section-title text-center fade-in">What Our Clients Say</h2>
-            <p class="section-description text-center fade-in muted">Real Results. Real Growth. Real Success Stories.</p>
-
-            <div class="testimonials-grid fade-in-up">
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <img src="images/dummy-client.jpg" alt="Client">
-                    </div>
-                    <div class="testimonial-body">
-                        <h4>Ravi Sharma</h4>
-                        <div class="company">Sunrise Properties</div>
-                        <div class="stars">★★★★★</div>
-                        <p>AdsGo Media transformed our property listings with cinematic video and targeted campaigns — leads tripled in 3 months.</p>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <img src="images/dummy-client.jpg" alt="Client">
-                    </div>
-                    <div class="testimonial-body">
-                        <h4>Aditi Verma</h4>
-                        <div class="company">Studio Nova</div>
-                        <div class="stars">★★★★★</div>
-                        <p>The branding work was on-point and strategic. Our bookings increased and referral traffic soared.</p>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <img src="images/dummy-client.jpg" alt="Client">
-                    </div>
-                    <div class="testimonial-body">
-                        <h4>Karan Mehta</h4>
-                        <div class="company">NextLeap Startup</div>
-                        <div class="stars">★★★★★</div>
-                        <p>From product-market fit to growth, the team's execution and analytics helped us hit our funding milestones.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="trust container">
+      <div class="trust-banner">
+        <h3>Why Choose A1 Mobile?</h3>
+        <ul class="trust-list">
+          <li>✔ Genuine Products</li>
+          <li>✔ Transparent Pricing</li>
+          <li>✔ Safe Transactions</li>
+          <li>✔ Cash On Delivery</li>
+          <li>✔ Free Local Delivery</li>
+          <li>✔ Doorstep Service Pickup</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Premium Real Estate Growth System -->
-    <section class="realestate-strategy" id="realestate">
-        <div class="container">
-            <div class="strategy-header text-center">
-                <h2 class="section-title">Real Estate Growth System – Level by Level Market Domination</h2>
-                <p class="section-description">We Don’t Just Promote Properties. We Engineer Demand.</p>
-            </div>
-
-            <div class="levels">
-                <article class="level-card">
-                    <div class="level-badge">LEVEL 1</div>
-                    <h3 class="level-title">Market Research & Positioning</h3>
-                    <div class="level-content">
-                        <ul class="level-list">
-                            <li><strong>Location-based buyer analysis:</strong> Heatmaps of buyer intent, commuting patterns, and neighborhood life-cycle indicators to find where demand will grow.</li>
-                            <li><strong>Competitor property research:</strong> Gap analysis of comparable projects, absorption rates, amenities benchmarking and offer positioning.</li>
-                            <li><strong>Pricing psychology strategy:</strong> Anchor pricing, decoy options and tiered package modeling to maximize perceived value and closing velocity.</li>
-                            <li><strong>Target audience segmentation:</strong> Wealth, lifestyle, life-stage and channel-first segments to match creative and media placement.</li>
-                            <li><strong>Demand mapping:</strong> Micro-market funnels showing lead sources, peak enquiry windows and conversion probability by locality.</li>
-                        </ul>
-                        <p class="level-note">Data-driven research eliminates guesswork—reducing wasted ad spend by focusing media and creative where buyers already are.</p>
-                    </div>
-                </article>
-
-                <article class="level-card">
-                    <div class="level-badge">LEVEL 2</div>
-                    <h3 class="level-title">Brand Identity & Project Presentation</h3>
-                    <div class="level-content">
-                        <ul class="level-list">
-                            <li><strong>Project logo creation:</strong> Distinctive marks that read premium at billboard and favicon scales.</li>
-                            <li><strong>Brochure & visual branding:</strong> High-end layouts optimized for print and digital lead-gen distribution.</li>
-                            <li><strong>Premium color identity:</strong> Gradient systems, metallic accents and contrast scales that signal luxury perception.</li>
-                            <li><strong>3D layout visualization:</strong> Photorealistic renders and floorplan visualizations that simplify buying decisions.</li>
-                            <li><strong>Site branding boards:</strong> Cohesive design systems for on-site signage, sales centres and social channels.</li>
-                        </ul>
-                        <p class="level-note">Perception building drives price confidence — strong branding reduces objections and shortens sales cycles.</p>
-                    </div>
-                </article>
-
-                <article class="level-card">
-                    <div class="level-badge">LEVEL 3</div>
-                    <h3 class="level-title">Cinematic Property Promotion</h3>
-                    <div class="level-content">
-                        <ul class="level-list">
-                            <li><strong>Drone videography:</strong> Aerial storytelling that reveals context, access and lifestyle.</li>
-                            <li><strong>Cinematic walkthrough videos:</strong> Director-led tours combining pacing, sound design and narrative.</li>
-                            <li><strong>360° virtual tours:</strong> Immersive experiences that qualify intent before physical visits.</li>
-                            <li><strong>Reels & social media edits:</strong> Platform-native short-form assets optimized for discovery and lead capture.</li>
-                            <li><strong>High-end property storytelling:</strong> Scripts that turn features into emotional benefits and urgency drivers.</li>
-                        </ul>
-                        <p class="level-note">Visually-driven assets trigger emotional buying — they raise perceived value and accelerate decisions.</p>
-                    </div>
-                </article>
-
-                <article class="level-card">
-                    <div class="level-badge">LEVEL 4</div>
-                    <h3 class="level-title">Hyper-Targeted Digital Advertising</h3>
-                    <div class="level-content">
-                        <ul class="level-list">
-                            <li><strong>Google Ads (location targeting):</strong> Hyperlocal search & performance campaigns tuned to geo-intent and keywords.</li>
-                            <li><strong>Facebook & Instagram ads:</strong> Audience layering and creative sequencing for awareness → consideration → lead.</li>
-                            <li><strong>Custom audience retargeting:</strong> Pixel and CRM audiences to re-engage high-intent visitors with tailored offers.</li>
-                            <li><strong>Lead funnel creation:</strong> Landing pages, pre-qualified forms and chat flows that convert at scale.</li>
-                            <li><strong>Budget optimization strategy:</strong> Data-first bid strategies, dayparting and channel attribution to maximize ROI.</li>
-                        </ul>
-                        <p class="level-note">Precision targeting focuses budget on likely buyers, increasing lead quality and lowering CPL.</p>
-                    </div>
-                </article>
-
-                <article class="level-card">
-                    <div class="level-badge">LEVEL 5</div>
-                    <h3 class="level-title">Automated Lead Conversion System</h3>
-                    <div class="level-content">
-                        <ul class="level-list">
-                            <li><strong>WhatsApp automation:</strong> Instant, personalized conversations with templates and rich media follow-ups.</li>
-                            <li><strong>CRM integration:</strong> Centralized lead records, scoring and lifecycle management.</li>
-                            <li><strong>Lead tracking dashboard:</strong> Real-time KPIs, pipeline health and cost-to-close analytics.</li>
-                            <li><strong>Follow-up sequences:</strong> Multi-touch cadences mixing SMS, email and chat to maximize conversion.</li>
-                            <li><strong>Sales team coordination system:</strong> Lead routing rules, SLA alerts and handoff tracking to improve close rates.</li>
-                        </ul>
-                        <p class="level-note">Automation ensures no lead slips — speed and consistency lift conversion significantly.</p>
-                    </div>
-                </article>
-
-                <article class="level-card level-6">
-                    <div class="level-badge">LEVEL 6</div>
-                    <h3 class="level-title">The Secret Scale Formula</h3>
-                    <div class="level-content">
-                        <p class="lead-strong">Exclusive scaling strategy revealed:</p>
-                        <ul class="level-list">
-                            <li><strong>Data-backed scaling:</strong> Expand in micro-wins—replicate channels and creatives that show consistent ROI signals.</li>
-                            <li><strong>Performance-based expansion:</strong> Scale budgets where CPA and LTV metrics beat targets; pause weak segments quickly.</li>
-                            <li><strong>Investor attraction system:</strong> KPI packs, valuation-ready dashboards and pitch assets that turn marketing growth into capital interest.</li>
-                            <li><strong>Brand authority domination:</strong> Thought leadership, PR and flagship projects that cement market leadership.</li>
-                        </ul>
-                        <p class="level-note dramatic">We Don’t Sell Plots. We Build Real Estate Brands That Dominate Markets.</p>
-                        <div class="level-cta">
-                            <a href="tel:9345166142" class="btn btn-primary">Book a Strategy Call</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
+    <!-- Customer Reviews -->
+    <section class="reviews-section">
+      <div class="reviews-inner container">
+        <div class="reviews-header">
+          <h2>Trusted by Our Happy Customers</h2>
+          <p>Serving Lebbaikudikkadu &amp; Perambalur with Honest Sales &amp; Reliable Service</p>
         </div>
+
+        <div class="review-grid">
+          <article class="review-card">
+            <div class="user-icon">MI</div>
+            <div class="review-body">
+              <div class="star-row">★★★★★</div>
+              <div class="review-meta">Mohamed Irfan <small>Lebbaikudikkadu</small></div>
+              <div class="review-text">"Very genuine shop. My Samsung mobile display was replaced with original spare. Fast and honest service."</div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="user-icon">SK</div>
+            <div class="review-body">
+              <div class="star-row">★★★★★</div>
+              <div class="review-meta">S. Karthikeyan <small>Perambalur</small></div>
+              <div class="review-text">"Reasonable price and free home delivery. Cash on delivery facility is very helpful. Trusted local shop."</div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="user-icon">AR</div>
+            <div class="review-body">
+              <div class="star-row">★★★★★</div>
+              <div class="review-meta">Abdul Rahman <small>Ariyalur Road</small></div>
+              <div class="review-text">"Smart watch battery issue solved same day. Owner personally supervised the service. Excellent experience."</div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="user-icon">RM</div>
+            <div class="review-body">
+              <div class="star-row">★★★★★</div>
+              <div class="review-meta">R. Meenakshi <small>Lebbaikudikkadu</small></div>
+              <div class="review-text">"Charging problem fixed quickly. Clear explanation about issue and cost. Very transparent service."</div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="user-icon">FZ</div>
+            <div class="review-body">
+              <div class="star-row">★★★★★</div>
+              <div class="review-meta">Fathima Zareena <small>Lebbaikudikkadu</small></div>
+              <div class="review-text">"WhatsApp enquiry response was very fast. Polite communication and on-time delivery."</div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="user-icon">PK</div>
+            <div class="review-body">
+              <div class="star-row">★★★★★</div>
+              <div class="review-meta">Prakash Kumar <small>Alathur</small></div>
+              <div class="review-text">"Purchased a new mobile here. Genuine product and proper bill provided. Happy with service."</div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="user-icon">SH</div>
+            <div class="review-body">
+              <div class="star-row">★★★☆☆</div>
+              <div class="review-meta">Shahul Hameed <small>Kunnam</small></div>
+              <div class="review-text">"Watch glass replacement done neatly. Affordable and reliable service."</div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="user-icon">MS</div>
+            <div class="review-body">
+              <div class="star-row">★★★★★</div>
+              <div class="review-meta">Mary Stella <small>Perambalur</small></div>
+              <div class="review-text">"Smart watch repaired quickly. Friendly customer support and good follow-up."</div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="user-icon">VR</div>
+            <div class="review-body">
+              <div class="star-row">★★★★★</div>
+              <div class="review-meta">Venkatesh R <small>Veppanthattai</small></div>
+              <div class="review-text">"OnePlus mobile repaired with original parts. Delivered on time as promised."</div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="user-icon">NA</div>
+            <div class="review-body">
+              <div class="star-row">★★★★★</div>
+              <div class="review-meta">Naseer Ahmed <small>Lebbaikudikkadu</small></div>
+              <div class="review-text">"Free home pickup service is very useful. Device handled safely and returned properly."</div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="user-icon">AR</div>
+            <div class="review-body">
+              <div class="star-row">★★★★★</div>
+              <div class="review-meta">Arul Raj <small>Perambalur District</small></div>
+              <div class="review-text">"Honest pricing with no hidden charges. Very trustworthy shop in our area."</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="reviews-footer" style="margin-top:18px">
+          <div class="reviews-highlight">500+ Happy Customers in Lebbaikudikkadu &amp; Surrounding Areas</div>
+          <div class="reviews-cta"><a href="service.html" class="btn whatsapp">Book Service on WhatsApp</a></div>
+        </div>
+      </div>
     </section>
 
-    <!-- Call To Action Section -->
-    <section class="cta">
-        <div class="cta-content">
-            <h2 class="cta-title fade-in">Ready to Scale Your Business?</h2>
-            <p class="cta-subtitle fade-in">Let's create a strategy that transforms your brand into an industry leader</p>
-            <a href="https://wa.me/919786390200?text=Hi%20Text%20Varanum%20I%20Am%20Redirected%20from%20your%20adsgo%20website" target="_blank" class="btn btn-primary btn-large fade-in">Get In Touch Today</a>
-        </div>
+    <section class="highlight fullwidth">
+      <div class="container">
+        <div class="delivery-banner">Free Home Delivery Available in Lebbaikudikkadu — Cash On Delivery Only — Doorstep Service Pickup Available</div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="About.html">About</a></li>
-                        <li><a href="Services.html">Services</a></li>
-                        <li><a href="RealEstate.html">Real Estate</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                        <p>Email: jaffarali@adsgomedia.in</p>
-                        <p>Phone: +91 9345166142</p>
-                        <p>Address: 5/3 Nethaji Complex Gandhi Road West Tambaram-600045</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Social Media</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link">LinkedIn</a>
-                        <a href="#" class="social-link">Instagram</a>
-                        <a href="#" class="social-link">Twitter</a>
-                        <a href="#" class="social-link">Facebook</a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <p>Subscribe for marketing insights and industry updates</p>
-                    <div class="newsletter">
-                        <input type="email" placeholder="Your email" class="newsletter-input">
-                        <button class="btn btn-small">Subscribe</button>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 AdsGo Media. All rights reserved. | Premium Digital Marketing Solutions</p>
-            </div>
+    <section class="contact container">
+      <h2 class="section-title">Contact & Location</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><strong>Shop:</strong> A1 Mobile Sales & Service</p>
+          <p><strong>Owner:</strong> Abudawoodu</p>
+          <p><strong>Phone / WhatsApp:</strong> +91 99429 80980</p>
+          <p><strong>Address:</strong> Lebbaikudikkadu, Perambalur District, Tamil Nadu</p>
+          <p><strong>Working Hours:</strong> 9:30 AM — 8:30 PM</p>
         </div>
-    </footer>
+        <div class="contact-map"><iframe src="https://www.google.com/maps?q=Lebbaikudikkadu,+Perambalur&output=embed" loading="lazy"></iframe></div>
+      </div>
+    </section>
 
-    <script src="script.js"></script>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© A1 Mobile Sales & Service</div>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
